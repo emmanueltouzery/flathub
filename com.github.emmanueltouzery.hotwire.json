@@ -31,18 +31,18 @@
         "/share"
       ],
       "sources": [
-	{
-	   "type": "archive",
-	   "url": "https://c-ares.haxx.se/download/c-ares-1.17.1.tar.gz",
-	   "sha256": "d73dd0f6de824afd407ce10750ea081af47eba52b8a6cb307d220131ad93fc40"
-	}
+        {
+          "type": "archive",
+          "url": "https://c-ares.haxx.se/download/c-ares-1.17.1.tar.gz",
+          "sha256": "d73dd0f6de824afd407ce10750ea081af47eba52b8a6cb307d220131ad93fc40"
+        }
       ]
     },
     {
       "name": "tshark",
       "buildsystem": "cmake-ninja",
       "config-opts": [
-	 "-DBUILD_wireshark=OFF"
+         "-DBUILD_wireshark=OFF"
       ],
       "cleanup": [
         "/include",
@@ -61,7 +61,7 @@
       "name": "hotwire",
       "buildsystem": "simple",
       "build-commands": [
-	"mkdir fontawesome-5.13.0 && mv svgs fontawesome-5.13.0",
+        "mkdir fontawesome-5.13.0 && mv svgs fontawesome-5.13.0",
         "cargo --offline fetch --manifest-path Cargo.toml --verbose",
         "cargo --offline build --release --verbose",
         "install -Dm755 ./target/release/hotwire -t /app/bin/",
@@ -73,22 +73,26 @@
         {
           "type": "git",
           "url": "https://github.com/emmanueltouzery/hotwire",
-	  "commit": "2e8d3ccedd576ccbac137913c8d47b169cf9f3d7"
+          "commit": "2e8d3ccedd576ccbac137913c8d47b169cf9f3d7"
         },
         {
           "type": "patch",
-	  "path": "Cargo.lock.diff"
+          "path": "Cargo.lock.diff"
         },
         {
           "type": "patch",
-	  "path": "Cargo.toml.diff"
+          "path": "Cargo.toml.diff"
         },
-	{
+        {
            "type": "archive",
-	   "sha256": "2985b9ba7aeb5cbd02f6ed4ccac0960ef5bed27269064956a6897bd7caa129f1",
-	   "url": "https://registry.npmjs.org/@fortawesome/fontawesome-free/-/fontawesome-free-5.13.0.tgz"
-	},
-	"cargo-sources.json"
+           "sha256": "2985b9ba7aeb5cbd02f6ed4ccac0960ef5bed27269064956a6897bd7caa129f1",
+           "url": "https://registry.npmjs.org/@fortawesome/fontawesome-free/-/fontawesome-free-5.13.0.tgz"
+        },
+        "cargo-sources.json",
+        {
+          "type": "patch",
+          "path": "relm-patch.diff"
+        }
       ]
     }
   ]
