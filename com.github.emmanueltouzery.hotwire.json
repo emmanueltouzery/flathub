@@ -25,6 +25,39 @@
   ],
   "modules": [
     {
+      "name": "c-ares",
+      "cleanup": [
+        "/include",
+        "/share"
+      ],
+      "sources": [
+	{
+	   "type": "archive",
+	   "url": "https://c-ares.haxx.se/download/c-ares-1.17.1.tar.gz",
+	   "sha256": "d73dd0f6de824afd407ce10750ea081af47eba52b8a6cb307d220131ad93fc40"
+	}
+      ]
+    },
+    {
+      "name": "tshark",
+      "buildsystem": "cmake-ninja",
+      "config-opts": [
+	 "-DBUILD_wireshark=OFF"
+      ],
+      "cleanup": [
+        "/include",
+        "/share/man",
+        "/lib/pkgconfig"
+      ],
+      "sources": [
+	{
+	   "type": "archive",
+	   "sha256": "de1aafd100a1e1207c850d180e97dd91ab8da0f5eb6beec545f725cdb145d333",
+	   "url": "https://1.eu.dl.wireshark.org/src/all-versions/wireshark-3.4.5.tar.xz"
+	}
+      ]
+    },
+    {
       "name": "hotwire",
       "buildsystem": "simple",
       "build-commands": [
