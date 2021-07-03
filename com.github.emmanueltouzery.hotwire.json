@@ -102,7 +102,7 @@
         {
           "type": "git",
           "url": "https://github.com/emmanueltouzery/hotwire",
-          "commit": "9a08f7bec53194b19767372c6214765dc9260fae"
+          "commit": "5c5cbe20f96479f50cbd16f57bbf0a59092bd76e"
         },
         {
           "type": "patch",
